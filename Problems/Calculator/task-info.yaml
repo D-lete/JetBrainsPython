@@ -1,0 +1,12 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: '# put your python code here'
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5938#comment
+status: Unchecked
+feedback:
+  message: Failed to get check result from JetBrains Academy
+  time: Wed, 17 Feb 2021 09:39:49 UTC
+record: -1

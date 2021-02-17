@@ -1,10 +1,9 @@
 class Point:
     pass
-    points = []
 
-    def __init__(self):
-        point = float(input(self)), float(input(self))
-        Point.points.append(point)
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-    def dist(self):
-        float(((Point.points.pop(0) - Point.points.pop(2)) ^ 2 + (Point.points.pop(1) - Point.points.pop(3)) ^ 2) ^ .5)
+    def dist(self, p2):
+        return ((p2.x - self.x) ** 2 + (p2.y - self.y) ** 2) ** 0.5
