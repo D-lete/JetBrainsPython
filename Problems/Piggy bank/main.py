@@ -5,5 +5,6 @@ class PiggyBank:
         self.cents = cents
 
     def add_money(self, deposit_dollars, deposit_cents):
-        self.dollars += deposit_dollars
-        if deposit_cents > 99:
+        pool = self.dollars * 100 + deposit_dollars * 100 + self.cents + deposit_cents
+        self.dollars = int(round(pool / 100, 1))
+        self.cents = pool % 100
