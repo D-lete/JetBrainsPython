@@ -1,0 +1,33 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    user_city = "Istanbul"
+
+    def change_city(new_user_city):
+        user_city = new_user_city
+
+    change_city("Paris")
+    print(user_city)
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6344#comment
+status: Failed
+feedback:
+  message: |
+    Failed. Runtime error
+
+    Error:
+    Traceback (most recent call last):
+      File "jailed_code", line 6, in <module>
+        change_city("Paris")
+      File "jailed_code", line 5, in change_city
+        return change_city(user_city)
+      File "jailed_code", line 5, in change_city
+        return change_city(user_city)
+      File "jailed_code", line 5, in change_city
+        return change_city(user_city)
+      [Previous line repeated 995 more times]
+    RecursionError: maximum recursion depth exceeded
+  time: Sun, 28 Feb 2021 19:17:34 UTC
+record: -1
