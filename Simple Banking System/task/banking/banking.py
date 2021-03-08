@@ -5,14 +5,15 @@ import random
 
 class ATM:
 
-    def __init__(self, card_number, pin_code, balance):
-        self.card_number = card_number
-        self.pin_code = pin_code
-        self.balance = balance
-        options_root = {1: ATM.generator(self, card_number, pin_code, balance),
+    def __init__(self):
+        self.card_number = 0
+        self.pin_code = 0
+        self.balance = 0
+
+    def nav(self):
+        options_root = {1: ATM.generator(self, card_number=0, pin_code=0, balance=0),
                         2: ATM.login(self),
                         0: ATM.exit(self)}
-
         print('1. Create an account\n2. Log into account\n0. Exit')
         user_input = int(input('> '))
         options_root.get(user_input)
@@ -25,7 +26,7 @@ class ATM:
         if balance == 0:
             self.balance = 0
         print('Your card number:\n %s Your card PIN:\n %s' % (self.card_number, self.pin_code))
-        ATM.__init__(self, card_number=self.card_number, pin_code=self.pin_code, balance=self.balance)
+        ATM.nav(self)
 
     def login(self):
         card = input('Enter your card number: \n> ')
@@ -35,7 +36,7 @@ class ATM:
             ATM.acct(self)
         elif card != self.card_number or pin != self.pin_code:
             print('Wrong card number or PIN!')
-            ATM.__init__(self, card_number=self.card_number, pin_code=self.pin_code, balance=self.balance)
+            ATM.nav(self)
 
     def acct(self):
         options_acct = {1: ATM.balance(self),
@@ -51,11 +52,11 @@ class ATM:
 
     def logout(self):
         print('You have been successfully logged out!')
-        ATM.__init__(self, card_number=self.card_number, pin_code=self.pin_code, balance=self.balance)
+        ATM.nav(self)
 
     def exit(self):
         print('Bye!')
         exit()
 
 
-ATM.__init__(self, card_number=0, pin_code=0, balance=0)
+ATM()
