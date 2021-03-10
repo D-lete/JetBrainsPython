@@ -157,12 +157,7 @@ files:
 feedback_link: https://hyperskill.org/projects/109/stages/591/implement#comment
 status: Failed
 feedback:
-  message: |-
-    Exception in test #1
-
-    Traceback (most recent call last):
-      File "banking.py", line 61, in <module>
-        ATM()
-    TypeError: __init__() missing 3 required positional arguments: 'card_number', 'pin_code', and 'balance'
-  time: Thu, 04 Mar 2021 11:31:12 UTC
+  message: No tests have run. For more information, see <a href="https://www.jetbrains.com/help/education/troubleshooting-guide.html#no_tests_have_run">the
+    Troubleshooting Guide</a>
+  time: Wed, 10 Mar 2021 12:33:23 UTC
 record: -1

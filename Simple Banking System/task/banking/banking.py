@@ -59,4 +59,4 @@ class ATM:
         exit()
 
 
-ATM()
+ATM(card_number=0, pin_code=0, balance=0)
