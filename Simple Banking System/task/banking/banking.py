@@ -5,10 +5,10 @@ import random
 
 class ATM:
 
-    def __init__(self):
-        self.card_number = 0
-        self.pin_code = 0
-        self.balance = 0
+    def __init__(self, card_number, pin_code, balance):
+        self.card_number = card_number
+        self.pin_code = pin_code
+        self.balance = balance
 
     def nav(self):
         options_root = {1: ATM.generator(self, card_number=0, pin_code=0, balance=0),
