@@ -1,0 +1,25 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: '# put your python code here'
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5938#comment
+status: Failed
+feedback:
+  message: |+
+    Failed test #1 of 41. Cannot check answer. Perhaps output format is wrong.
+
+    This is a sample test from the problem statement!
+
+    Test input:
+    5.0
+    0.0
+    mod
+    Correct output:
+    Division by 0!
+
+    Your code output:
+
+  time: Tue, 20 Apr 2021 13:06:29 UTC
+record: -1

@@ -1,0 +1,26 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    def fahrenheit_to_celsius():
+        pass
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8935#comment
+status: Failed
+feedback:
+  message: |
+    Failed test #1 of 5. Wrong answer
+
+    This is a sample test from the problem statement!
+
+    Test input:
+    451
+
+    Correct output:
+    232.778
+
+    Your code output:
+    None
+  time: Wed, 24 Mar 2021 08:10:18 UTC
+record: -1

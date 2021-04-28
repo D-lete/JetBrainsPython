@@ -157,7 +157,6 @@ files:
 feedback_link: https://hyperskill.org/projects/109/stages/591/implement#comment
 status: Failed
 feedback:
-  message: No tests have run. For more information, see <a href="https://www.jetbrains.com/help/education/troubleshooting-guide.html#no_tests_have_run">the
-    Troubleshooting Guide</a>
-  time: Thu, 11 Mar 2021 12:23:02 UTC
+  message: Syntax Error
+  time: Mon, 15 Mar 2021 13:30:13 UTC
 record: -1
