@@ -276,7 +276,7 @@ files:
             return CheckResult.wrong('You should not allow to transfer to a card number that doesn\'t pass '
                                      'the Luhn algorithm.\n Instead output \'{}\''.format(
                 'Probably you made mistake in card number. Please try again!'))
-        doesnt_exist_card = 3000003972196503
+        doesnt_exist_card = 4000003972196501
         return '3\n{}'.format(doesnt_exist_card)
 
 

@@ -1,7 +1,6 @@
 # put your python code here
-a = input()
-b = input()
+from statistics import mean
 
-values = []
-
-for i in range()
+a, b = int(input()), int(input())
+result_set = [i for i in range(a, b + 1) if i % 3 == 0]
+print(float(mean(result_set)))

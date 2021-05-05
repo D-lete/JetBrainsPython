@@ -11,7 +11,7 @@ print('Hello, a')</code></pre>
    <li>Formatted string literals</li> 
    <li>The <code class="language-python">str.format()</code> method</li> 
   </ul> 
-  <p>Earlier <strong>the % operator </strong>was in use. This built-in operator derived from C-language and was used in some situations by following the scheme:</p> 
+  <p>Earlier <strong>the % operator </strong>was in use. This built-in operator was derived from C-language and was used in some situations in the following way:</p> 
   <p style="text-align: center;"><strong>string % value</strong></p> 
   <p>Thus, the variable to the right of <code class="language-python">%</code> was included in the string to the left of it. If we'd wanted to divide 11 by 3, the <code class="language-python">/</code> operator would have returned a float number with a lot of decimal places.</p> 
   <pre><code class="language-python">print(11 / 3)  # 3.6666666666666665</code></pre> 
@@ -33,8 +33,8 @@ print('%.2f' % (11/3))  # 3.67</code></pre>
   <pre><code class="language-no-highlight">Strangers in the Night by Frank Sinatra</code></pre> 
   <pre><code class="language-no-highlight">Night in the Strangers by Frank Sinatra</code></pre> 
   <p>The second output sounds really weird, doesn't it?</p> 
-  <p>If you've mentioned more variables than needed in the format part, the extra ones just will be ignored.</p> 
-  <p>We can also use keywords to make such string more readable. Don't forget, that you can easily break the lines! For example:</p> 
+  <p>If you've mentioned more variables than needed in the format part, the extra ones will just be ignored.</p> 
+  <p>We can also use keywords to make such strings more readable. Don't forget that you can easily break the lines! For example:</p> 
   <pre><code class="language-python">print('The {film} at {theatre} was {adjective}!'.format(film='Lord of the Rings',
                                                         adjective='incredible',
                                                         theatre='BFI IMAX'))</code></pre> 
@@ -72,6 +72,6 @@ print(f'{needed_percent}% from {hundred_percent_number} is {needed_percent_numbe
 print(f'Rounding {needed_percent_number} to 1 decimal place is {needed_percent_number:.1f}')
 # Rounding 291.68 to 1 decimal place is 291.7</code></pre> 
   <p>You can read more about Format Specification Mini-Language in Python in the <a target="_blank" href="https://docs.python.org/3.6/library/string.html#format-specification-mini-language" rel="noopener noreferrer nofollow">official documentation</a>.</p> 
-  <p>Maybe, you'll think that these methods are not important and overrated, but they give you the opportunity to make your code look fancy and readable.</p>
+  <p>Maybe you'll think that these methods are not important and overrated, but they give you the opportunity to make your code look fancy and readable.</p>
  </body>
 </html>
