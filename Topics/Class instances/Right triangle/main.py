@@ -5,8 +5,16 @@ class RightTriangle:
         self.b = leg_2
         # calculate the area here
 
+    @property
+    def area(self) -> float:
+        return 1 / 2 * self.a * self.b
+
 
 # triangle from the input
 input_c, input_a, input_b = [int(x) for x in input().split()]
 
 # write your code here
+if input_c ** 2 != (input_a ** 2 + input_b ** 2):
+    print('Not right')
+else:
+    print(RightTriangle)

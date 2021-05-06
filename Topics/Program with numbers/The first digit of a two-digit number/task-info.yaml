@@ -2,10 +2,11 @@ type: code
 files:
 - name: main.py
   visible: true
+  text: '# put your python code here'
   learner_created: false
-feedback_link: https://hyperskill.org/learn/step/9476#comment
+feedback_link: https://hyperskill.org/learn/step/6467#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Wed, 05 May 2021 20:19:01 UTC
+  time: Thu, 06 May 2021 07:06:24 UTC
 record: -1

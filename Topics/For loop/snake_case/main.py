@@ -1,7 +1,8 @@
-word = input()
+import re
 
-for i in range(len(word)):
-    if not word[i].islower() and i > 0:
-        word_start = word[:i]
-        word_end = word[i:]
-        print(word_start.lower() + '_' + word_end.lower())
+variable = input()
+words = [re.sub(r'([A-Z])', r'_\1', variable)].pop(0)
+if words[0] == '_':
+    print(words[1:].lower())
+else:
+    print(words[0:].lower())

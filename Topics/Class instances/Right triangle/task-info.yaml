@@ -17,5 +17,8 @@ files:
     # write your code here
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/6676#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 06 May 2021 06:54:20 UTC
 record: -1
