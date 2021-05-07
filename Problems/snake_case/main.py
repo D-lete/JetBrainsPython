@@ -1,11 +1,8 @@
+import re
 
-word = input()
-
-for i in range(len(word)):
-    if not word[i].islower() and i > 0:
-        word = word[:i] + "_" + word[i:]
-        uppers = word.count(word[i].isupper())
-        if word.count("_", 0) > uppers:
-            word.replace("_", "", uppers - 1)
-
-print(word.lower())
+variable = input()
+words = [re.sub(r'([A-Z])', r'_\1', variable)].pop(0)
+if words[0] == '_':
+    print(words[1:].lower())
+else:
+    print(words[0:].lower())

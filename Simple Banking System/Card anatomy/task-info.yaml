@@ -155,9 +155,5 @@ files:
     # Write your code here
   learner_created: false
 feedback_link: https://hyperskill.org/projects/109/stages/591/implement#comment
-status: Failed
-feedback:
-  message: No tests have run. For more information, see <a href="https://plugins.jetbrains.com/plugin/10081-edutools/docs/troubleshooting-guide.html#no_tests_have_run">the
-    Troubleshooting guide</a>
-  time: Thu, 29 Apr 2021 12:49:29 UTC
-record: -1
+status: Solved
+record: 1

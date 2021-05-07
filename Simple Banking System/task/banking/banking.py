@@ -21,10 +21,11 @@ class ATM:
 
     @staticmethod
     def generator():
-        ATM.card_number = str('400000' + str(random.randrange(100000000, 9999999999, 1)))
+        base_card = '400000' + str(random.randrange(100000000, 999999999) + random.randrange(1, 9))
+        ATM.card_number = base_card
         ATM.pin_code = str(random.randrange(1000, 9999))
         ATM.balance = round(0, 2)
-        print(f'Your card has been created \nYour card number: \n{ATM.card_number} \nYour card PIN: \n{ATM.pin_code}')
+        print(f'Your card has been created \nYour card number: \n{ATM.card_number}\nYour card PIN: \n{ATM.pin_code}')
         ATM.menu()
 
     @staticmethod
@@ -56,6 +57,6 @@ class ATM:
     @staticmethod
     def exit():
         print('Bye!')
-        breakpoint()
+
 
 ATM.menu()
