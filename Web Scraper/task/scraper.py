@@ -14,8 +14,6 @@ class WebScraper:
             soup = BeautifulSoup(r.text, parser)
             a = {'title': soup.title.string, 'description': soup.find('p').getText()}
             print(a)
-            # <title> tag
-            # <meta name="description"
 
 
 WebScraper()
