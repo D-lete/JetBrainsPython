@@ -1,0 +1,21 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    def select_dates(potential_dates):
+        ...
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9671#comment
+status: Failed
+feedback:
+  message: |
+    Failed. Runtime error
+
+    Error:
+    Traceback (most recent call last):
+      File "jailed_code", line 19, in <module>
+        _result = select_dates(_dates)
+    NameError: name 'select_dates' is not defined
+  time: Wed, 26 May 2021 14:22:27 UTC
+record: -1
