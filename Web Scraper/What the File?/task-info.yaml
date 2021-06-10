@@ -1,8 +1,5 @@
 type: edu
 files:
-- name: scraper.py
-  visible: true
-  learner_created: false
 - name: tests.py
   visible: false
   text: |
@@ -63,6 +60,15 @@ files:
     if __name__ == '__main__':
         WebScraperTest().run_tests()
   learner_created: false
+- name: scraper.py
+  visible: true
+  learner_created: false
+- name: source.html
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/145/stages/783/implement#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Thu, 10 Jun 2021 15:37:09 UTC
+record: 3

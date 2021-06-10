@@ -1,0 +1,31 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8076#comment
+status: Failed
+feedback:
+  message: |
+    Failed test #1 of 2. Runtime error
+
+    This is a sample test from the problem statement!
+
+    Test input:
+    HlAdghmcXnt
+    256
+    Correct output:
+    ImBehindYou
+
+    Your code output:
+
+
+    Error:
+    Traceback (most recent call last):
+      File "jailed_code", line 1, in <module>
+        print(''.join([chr((ord(x) + sum(int(input()).to_bytes(2, byteorder='little')))) for x in list(input())]))
+      File "jailed_code", line 1, in <listcomp>
+        print(''.join([chr((ord(x) + sum(int(input()).to_bytes(2, byteorder='little')))) for x in list(input())]))
+    EOFError: EOF when reading a line
+  time: Thu, 10 Jun 2021 11:52:10 UTC
+record: -1
