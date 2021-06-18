@@ -1,16 +1,15 @@
 import glob
 import os
 import random
-import string
 import re
+import string
 
+import requests
+from bs4 import BeautifulSoup
+from furl import furl
 from hstest.check_result import CheckResult
 from hstest.stage_test import StageTest
 from hstest.test_case import TestCase
-
-import requests
-from furl import furl
-from bs4 import BeautifulSoup
 
 
 class NatureScraper:
@@ -28,15 +27,24 @@ class NatureScraper:
 
     def get_article_links_of_type(self, url, article_type="News"):
         origin_url = furl(url).origin
-        articles_resp = requests.get(url)
+        try:
+            articles_resp = requests.get(url)
+        except Exception:
+            return CheckResult.wrong("An error occurred when tests tried to connect to the Internet page.\n"
+                                     "Please, try again.")
         soup = BeautifulSoup(articles_resp.text, "html.parser")
         articles = soup.find_all(self.tag_containing_atricle_type)
         articles = list(filter(lambda x: x.text.strip() == article_type, articles))
-        return [furl(origin_url).add(path=x.find_parent("article").find(self.tag_leading_to_view_article).get("href")).url \
-                         for x in articles]
+        return [
+            furl(origin_url).add(path=x.find_parent("article").find(self.tag_leading_to_view_article).get("href")).url \
+            for x in articles]
 
     def get_article_title_and_content(self, url):
-        article = requests.get(url)
+        try:
+            article = requests.get(url)
+        except Exception:
+            return CheckResult.wrong("An error occurred when tests tried to connect to the Internet page.\n"
+                                     "Please, try again.")
         soup = BeautifulSoup(article.text, "html.parser")
         title = soup.find(self.tag_containing_article_title)
         content = soup.find(self.tag_containing_article_body)
@@ -69,7 +77,7 @@ class WebScraperTest(StageTest):
             return CheckResult.correct()
         title, content = None, None
         while not title or not content:
-            article_n = random.randint(0, len(article_links)-1)
+            article_n = random.randint(0, len(article_links) - 1)
             title, content = scraper.get_article_title_and_content(article_links[article_n])
             if not title or not content:
                 article_links.pop(article_n)
@@ -78,7 +86,8 @@ class WebScraperTest(StageTest):
         title = f"{title.translate(str.maketrans('', '', string.punctuation)).replace(' ', '_')}.txt"
         if not os.path.exists(title):
             return CheckResult.wrong("A file with the name \"{0}\" was not found.\n"
-                                     "Make sure you remove punctuation and \nreplace the whitespaces with underscores in the titles.".format(title))
+                                     "Make sure you remove punctuation and \nreplace the whitespaces with underscores in the titles.".format(
+                title))
         with open(title, "rb") as f:
             try:
                 file_content = f.read().decode('utf-8').strip()

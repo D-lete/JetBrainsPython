@@ -9,16 +9,15 @@ files:
     import glob
     import os
     import random
-    import string
     import re
+    import string
 
+    import requests
+    from bs4 import BeautifulSoup
+    from furl import furl
     from hstest.check_result import CheckResult
     from hstest.stage_test import StageTest
     from hstest.test_case import TestCase
-
-    import requests
-    from furl import furl
-    from bs4 import BeautifulSoup
 
 
     class NatureScraper:
@@ -36,15 +35,24 @@ files:
 
         def get_article_links_of_type(self, url, article_type="News"):
             origin_url = furl(url).origin
-            articles_resp = requests.get(url)
+            try:
+                articles_resp = requests.get(url)
+            except Exception:
+                return CheckResult.wrong("An error occurred when tests tried to connect to the Internet page.\n"
+                                         "Please, try again.")
             soup = BeautifulSoup(articles_resp.text, "html.parser")
             articles = soup.find_all(self.tag_containing_atricle_type)
             articles = list(filter(lambda x: x.text.strip() == article_type, articles))
-            return [furl(origin_url).add(path=x.find_parent("article").find(self.tag_leading_to_view_article).get("href")).url \
-                             for x in articles]
+            return [
+                furl(origin_url).add(path=x.find_parent("article").find(self.tag_leading_to_view_article).get("href")).url \
+                for x in articles]
 
         def get_article_title_and_content(self, url):
-            article = requests.get(url)
+            try:
+                article = requests.get(url)
+            except Exception:
+                return CheckResult.wrong("An error occurred when tests tried to connect to the Internet page.\n"
+                                         "Please, try again.")
             soup = BeautifulSoup(article.text, "html.parser")
             title = soup.find(self.tag_containing_article_title)
             content = soup.find(self.tag_containing_article_body)
@@ -77,7 +85,7 @@ files:
                 return CheckResult.correct()
             title, content = None, None
             while not title or not content:
-                article_n = random.randint(0, len(article_links)-1)
+                article_n = random.randint(0, len(article_links) - 1)
                 title, content = scraper.get_article_title_and_content(article_links[article_n])
                 if not title or not content:
                     article_links.pop(article_n)
@@ -86,7 +94,8 @@ files:
             title = f"{title.translate(str.maketrans('', '', string.punctuation)).replace(' ', '_')}.txt"
             if not os.path.exists(title):
                 return CheckResult.wrong("A file with the name \"{0}\" was not found.\n"
-                                         "Make sure you remove punctuation and \nreplace the whitespaces with underscores in the titles.".format(title))
+                                         "Make sure you remove punctuation and \nreplace the whitespaces with underscores in the titles.".format(
+                    title))
             with open(title, "rb") as f:
                 try:
                     file_content = f.read().decode('utf-8').strip()
@@ -125,6 +134,126 @@ files:
     </body>
     </html>
   learner_created: true
+- name: How_scientists_are_embracing_NFTs.txt
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/145/stages/784/implement#comment
-status: Unchecked
+status: Failed
+feedback:
+  message: "Wrong answer in test #1\n\nSome of the files do not contain the expected\
+    \ article's body. \nThe tests expected the following article:\n\"The NFT for a\
+    \ digital collage called ‘Everydays: The first 5000 days’ by US artist Beeple\
+    \ (pictured) recently sold for $69.3 million.Credit: Christie’s Images Limited\
+    \ 2021From cat memes and music tracks to all manner of digital art, the bizarre,\
+    \ often quirky market for non-fungible tokens (NFTs) is booming. And now, science\
+    \ is hopping on the bandwagon for these receipts of ownership of digital files\
+    \ that are bought and sold online.On 8 June, the University of California, Berkeley,\
+    \ auctioned off an NFT based on documents relating to the work of Nobel-prizewinning\
+    \ cancer researcher James Allison for more than US$50,000. On 17 June, the US\
+    \ Space Force — a branch of the US Armed Forces — started selling a series of\
+    \ NFTs featuring augmented reality images of satellites and space iconography.And,\
+    \ from 23 to 30 June, computer scientist Tim Berners-Lee, who invented the World\
+    \ Wide Web, is auctioning an NFT featuring the source code of the original web\
+    \ browser, along with a silent video of the code being typed out.Meanwhile, biology\
+    \ pioneer George Church and a company he co-founded, Nebula Genomics in San Francisco,\
+    \ California, have advertised their intention to sell an NFT of Church’s genome.\
+    \ Church, a geneticist at Harvard University in Cambridge, Massachusetts, who\
+    \ helped to launch the Human Genome Project, is well known for controversial proposals,\
+    \ including resurrecting the woolly mammoth and creating a dating app based on\
+    \ DNA.An animated visualization of the source code for the World Wide Web is part\
+    \ of an NFT being auctioned by internet pioneer Tim Berners-Lee in late June.Credit:\
+    \ Sotheby’sThe fad for NFTs has been celebrated online for elevating digital art\
+    \ — and simultaneously derided as meaningless and for having a huge carbon footprint\
+    \ because of the massive computing power required to sustain it.The arguments\
+    \ over NFTs in science are similarly heated, with some saying they provide an\
+    \ incentive to showcase science to the public; a new method of fundraising; and\
+    \ even a way for people to earn royalties when pharmaceutical companies buy access\
+    \ to their genomic data. Others say that NFTs — which operate in a similar way\
+    \ to digital cryptocurrencies — are just needless energy pouring into a market\
+    \ bubble that’s sure to burst.“The more you look at it, the more you realize how\
+    \ bonkers it is,” says Nicholas Weaver, who studies cryptocurrency at the International\
+    \ Computer Science Institute in Berkeley.NFT bubbleNFTs use the blockchain technology\
+    \ that underlies cryptocurrencies such as Bitcoin to certify ownership of a file.\
+    \ NFTs are ‘minted’ in the same way as cryptocurrency — using one of many online\
+    \ platforms to add them to a tamper-proof blockchain ledger, typically at a cost\
+    \ of tens or hundreds of dollars — and then sold online. People can buy and trade\
+    \ these certificates in the same way as physical collectibles, such as baseball\
+    \ cards. The art or data can be freely viewed online and downloaded in their original\
+    \ form; the NFT buyer simply has a verifiable receipt of ownership.The NFT concept\
+    \ was born in the early 2010s but exploded this year: in March, for example, an\
+    \ NFT for a digital artwork by a US artist nicknamed Beeple sold for nearly $70\
+    \ million. The NFT market hit a 30-day sales record of $325 billion in early May.\
+    \ In June, it cooled significantly, but it is still seeing more than $10 million\
+    \ in sales per week.Could Bitcoin technology help science?Michael Alvarez Cohen,\
+    \ director of innovation ecosystem development in the intellectual-property office\
+    \ at the University of California, Berkeley, decided to try to use NFTs to raise\
+    \ funds for the university. A team of designers scanned legal papers filed with\
+    \ the university, along with handwritten notes and faxes relating to Allison’\
+    s valuable discoveries. This artwork, called The Fourth Pillar, is available for\
+    \ all to see online, and the team minted an NFT for ownership of the work.After\
+    \ a short bidding war, the NFT sold on 8 June for 22 ether (around US$54,000).\
+    \ The buyer was a Berkeley alumni group called FiatLux DAO, founded days before\
+    \ by the same blockchain experts who had advised Berkeley on how to create the\
+    \ NFT in the first place. The money will be split between NFT auction site Foundation,\
+    \ a Berkeley research fund and carbon offsets.“It’s an interesting combination\
+    \ of showing the world these historic documents, and also creating art and sponsoring\
+    \ research and education,” says Cohen. “It’s kind of a beautiful circle.”An artwork\
+    \ including patent disclosures for the Nobel Prize-winning work of Jim Allison\
+    \ is part of an NFT sold by the University of California, Berkeley.Credit: UC\
+    \ BerkeleyBut others counter that selling NFTs is a waste, because blockchains\
+    \ rely on energy-hungry computational crunching to prevent data corruption. Digital-currency\
+    \ operator Ethereum, for example, currently has about the same energy usage as\
+    \ the whole of Zimbabwe.That makes NFTs “really a criminal amount of waste for\
+    \ something that doesn’t do anything valuable other than act as a database for\
+    \ receipts for ugly cats,” says Weaver. Auctioning off the physical papers would\
+    \ make more sense, he says.Genome gold rushThe Berkeley team is also creating\
+    \ a digital artwork from documents relating to Nobel laureate Jennifer Doudna,\
+    \ one of the pioneers of CRISPR gene-editing, for a future NFT auction. That is\
+    \ being slowed by the need to make sure that her patent — which is still active\
+    \ — isn’t infringed by the art.Meanwhile, on 10 June, Church and Nebula Genomics\
+    \ put up for sale 20 NFTs, each featuring an artwork based on Church’s likeness\
+    \ and a special, limited edition discount on Nebula’s whole-genome sequencing\
+    \ service. Money raised will be split between an unnamed charity, Church, blockchain\
+    \ company Oasis Labs, Nebula Genomics and the sales platform AkoinNFT.That offering\
+    \ is a surprising step back from what was originally advertised: the group said\
+    \ it would be selling an NFT including Church’s genome in a 10 June auction. But\
+    \ that plan was put on the back burner at the last minute, Nebula Genomics told\
+    \ Nature, “because the NFT and crypto markets have declined over the past week”\
+    .“Our plan is to continue to wait for market conditions to improve before launching\
+    \ the entire auction,” says Nebula co-founder Kamal Obbad. It is unclear when\
+    \ that might be.The idea of selling an NFT of Church’s genome had provoked both\
+    \ excitement and bemusement online. As one scientist joked on Twitter, given that\
+    \ Church’s genome has long been freely available online: “By a weird coincidence,\
+    \ I'm also selling George Church's genome! No auction or NFT or anything though,”\
+    \ they quipped, offering to send the link in exchange for $5.Harvard geneticist\
+    \ George Church plans to auction an NFT for his genome.Credit: Gretchen Ertl/The\
+    \ New York Times/Redux/eyevineEthical issuesBut for Church’s company, this NFT\
+    \ has a more serious purpose: a trial run. Nebula Genomics already uses blockchain\
+    \ technology to allow 15,000 people whose entire genomes it has sequenced to grant\
+    \ temporary access to their data to specific users (such as pharmaceutical companies\
+    \ searching for links between genes and diseases). NFTs could in future provide\
+    \ a handy system to let customers make money from those exchanges, says Obbad.A\
+    \ few other companies are similarly experimenting with ways for customers to sell\
+    \ genomic data on blockchain marketplaces. The idea is to give users more control\
+    \ of their data and to direct profits straight to the individuals, thereby encouraging\
+    \ more people to get their genomes sequenced.AI researchers embrace Bitcoin technology\
+    \ to share medical dataBut some note that these goals can be achieved without\
+    \ NFTs. The plan to auction an NFT for Church’s genome “is a PR stunt”, says Yaniv\
+    \ Erlich, a computer scientist at Columbia University in New York City and chief\
+    \ science officer of MyHeritage, a genome-sequencing and genealogy company based\
+    \ in Or Yehuda, Israel.Selling personal genomes opens up ethical issues, says\
+    \ bioethicist Vardit Ravitsky at the University of Montreal in Canada, such as\
+    \ whether any individual truly owns their genome, given that much of it is shared\
+    \ with family members. She also notes there are already debates about whether\
+    \ people should be allowed to make money from their biological resources, for\
+    \ example through sperm donation. The problem of selling data, she says, “will\
+    \ be the next generation of these issues”.There are plenty of “open questions”\
+    , agrees Obbad, who says that the proposal to sell an NFT featuring Church's genome\
+    \ had been “a good conversation starter”.\"\nHowever, the following text was found\
+    \ in the file How_scientists_are_embracing_NFTs.txt:\n\"/articles/d41586-021-01642-3Article_name\
+    \ :How scientists are embracing NFTsArticle Content :Is a trend of auctioning\
+    \ non-fungible tokens based on scientific data a fascinating art fad, an environmental\
+    \ disaster or the future of monetized genomics?\"\n\nPlease find below the output\
+    \ of your program during this failed test.\n\n---\n\n['How_scientists_are_embracing_NFTs']"
+  time: Fri, 18 Jun 2021 15:32:56 UTC
 record: -1
