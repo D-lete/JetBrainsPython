@@ -6,3 +6,4 @@ content:
 - Replace lambda with def
 - Turn into a lambda function
 - Re-write using lambda functions
+- Nested functions
