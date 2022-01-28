@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: <code>numbers.sort(reverse=True)</code>
+- text: <code>numbers.reverse()</code>
+- text: <code>sorted_numbers = sorted(numbers)</code>
+- text: <code>numbers.sort(reverse=False)</code>
+- text: <code>sorted_numbers = reversed(numbers)</code>
+- text: <code>sorted_numbers = sorted(numbers, reverse=True)</code>
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: main.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6787#comment
+status: Solved
+record: -1
