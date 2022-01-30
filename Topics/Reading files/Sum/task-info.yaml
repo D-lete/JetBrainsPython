@@ -1,0 +1,16 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: '# read sums.txt'
+  learner_created: false
+- name: sums.txt
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/learn/step/8145#comment
+status: Failed
+feedback:
+  message: |
+    Failed. Wrong answer
+  time: Sun, 30 Jan 2022 01:53:35 UTC
+record: -1

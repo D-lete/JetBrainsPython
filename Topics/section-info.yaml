@@ -20,3 +20,5 @@ content:
 - Basic string methods
 - Taking input
 - Loop control statements
+- Slicing
+- Reading files
