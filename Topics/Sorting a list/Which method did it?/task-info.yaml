@@ -1,14 +1,12 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: <code>numbers.sort(reverse=True)</code>
-- text: <code>numbers.reverse()</code>
-- text: <code>sorted_numbers = sorted(numbers)</code>
+- text: <code>sorted_numbers = sorted(numbers, reverse=True)</code>
 - text: <code>numbers.sort(reverse=False)</code>
 - text: <code>sorted_numbers = reversed(numbers)</code>
-- text: <code>sorted_numbers = sorted(numbers, reverse=True)</code>
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
+- text: <code>sorted_numbers = sorted(numbers)</code>
+- text: <code>numbers.sort(reverse=True)</code>
+- text: <code>numbers.reverse()</code>
 files:
 - name: main.py
   visible: true

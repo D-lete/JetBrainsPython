@@ -1,13 +1,11 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: Wait for the user to write <code>"hi"</code>
 - text: Print <code>"hi"</code> and continue executing the code
+- text: Wait till the user presses any key
+- text: Wait for the user to write <code>"hi"</code>
 - text: Wait 10 seconds and continue executing the code
 - text: 'Print <code>Say "hi": </code> and wait till the user presses Enter'
-- text: Wait till the user presses any key
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
 files:
 - name: main.py
   visible: true

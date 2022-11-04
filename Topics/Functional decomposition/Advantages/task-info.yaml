@@ -1,13 +1,11 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: Maintaining the code is simpler because some action is defined in one place.
-- text: The program works faster.
 - text: The code is more readable.
-- text: The code is easier to reuse.
+- text: Maintaining the code is simpler because some action is defined in one place.
 - text: The program uses less memory.
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
+- text: The code is easier to reuse.
+- text: The program works faster.
 files:
 - name: main.py
   visible: true

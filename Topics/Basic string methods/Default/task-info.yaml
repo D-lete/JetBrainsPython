@@ -3,10 +3,8 @@ is_multiple_choice: false
 options:
 - text: whitespaces
 - text: an underscore
-- text: a comma
 - text: periods
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
+- text: a comma
 files:
 - name: main.py
   visible: true

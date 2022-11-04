@@ -6,8 +6,6 @@ options:
 - text: 3
 - text: Any arbitrary number of arguments
 - text: Lambda expressions don't take any arguments
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
 files:
 - name: main.py
   visible: true

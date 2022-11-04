@@ -2,11 +2,9 @@ type: choice
 is_multiple_choice: true
 options:
 - text: input()
-- text: 'writeline("Write what you want: ")'
 - text: 'input("Write what you want: ")'
+- text: 'writeline("Write what you want: ")'
 - text: 'print("Write what you want: ")'
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
 files:
 - name: main.py
   visible: true

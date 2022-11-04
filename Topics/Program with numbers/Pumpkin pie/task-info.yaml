@@ -5,8 +5,6 @@ options:
 - text: Convert the input value to <code>float</code> rather than <code>int</code>.
 - text: Read the numbers as floats and then round them up to the closest integer.
 - text: Print a message for the guests that pieces should be whole.
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
 files:
 - name: main.py
   visible: true

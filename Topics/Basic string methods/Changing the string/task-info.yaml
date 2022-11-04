@@ -6,8 +6,6 @@ options:
 - text: '"London is the cxpitxl of grext britxin."'
 - text: '"London is the cxpitxl of great britain."'
 - text: '"LONDON IS THE CAPITAL OF GREAT BRITAIN."'
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
 files:
 - name: main.py
   visible: true

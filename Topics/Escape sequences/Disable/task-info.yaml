@@ -3,10 +3,8 @@ is_multiple_choice: false
 options:
 - text: \t
 - text: \b
-- text: \r
 - text: \n
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
+- text: \r
 files:
 - name: main.py
   visible: true

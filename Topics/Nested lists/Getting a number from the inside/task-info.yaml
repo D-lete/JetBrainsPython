@@ -1,13 +1,11 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: my_list[2][3]
-- text: my_list[1][2][1]
-- text: my_list[2][0]
-- text: my_list[3, 0]
 - text: my_list[1][2][0]
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
+- text: my_list[2][3]
+- text: my_list[2][0]
+- text: my_list[1][2][1]
+- text: my_list[3, 0]
 files:
 - name: main.py
   visible: true

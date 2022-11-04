@@ -1,2 +1,2 @@
-n = 10
-print((lambda x, n: x * n)(2, 3))
+shopping_list.remove('milk')
+shopping_list.append('brownie')

@@ -1,16 +1,14 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: long_cities = [city if len(city) &gt;= 6 for country in country_list for city
-    in country]
 - text: long_cities = [city if len(city) &gt;= 6 for city in country for country in
     country_list]
-- text: long_cities = [city for country in country_list for city in country if len(city)
-    &gt;= 6]
 - text: long_cities = [city for city in country for country in country_list if len(city)
     &gt;= 6]
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
+- text: long_cities = [city if len(city) &gt;= 6 for country in country_list for city
+    in country]
+- text: long_cities = [city for country in country_list for city in country if len(city)
+    &gt;= 6]
 files:
 - name: main.py
   visible: true

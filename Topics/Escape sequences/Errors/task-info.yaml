@@ -1,12 +1,10 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: ' ''My sister\''s bike is really fast.'''
-- text: '"The most famous song in the world can''t be so easy to sing."'
-- text: '''My car has broken therefore I can''t be in time at work.'''
 - text: ' ''We''re trying to find treasure in the Sahara!'''
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
+- text: ' ''My sister\''s bike is really fast.'''
+- text: '''My car has broken therefore I can''t be in time at work.'''
+- text: '"The most famous song in the world can''t be so easy to sing."'
 files:
 - name: main.py
   visible: true

@@ -1,12 +1,10 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: <code>get_opposite_and_inverse(number)</code>
-- text: <code>get_inverse(number)</code>
 - text: <code>get_opposite(number)</code>
+- text: <code>get_opposite_and_inverse(number)</code>
 - text: <code>is_even(number)</code>
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
+- text: <code>get_inverse(number)</code>
 files:
 - name: main.py
   visible: true

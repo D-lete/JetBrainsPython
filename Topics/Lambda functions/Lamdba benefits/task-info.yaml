@@ -5,8 +5,6 @@ options:
 - text: You don't have to explicitly have a <code>return</code> statement
 - text: They run faster
 - text: They can be embedded inside a larger expression
-message_correct: Congratulations!
-message_incorrect: Incorrect solution
 files:
 - name: main.py
   visible: true
